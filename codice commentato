@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+    <!--definiamo il titolo del documento--></head
+  ><!--aprimo l'head-->
+  <body>
+    <!--apriamo il body-->
+    <script>
+      /*apriamo lo script*/
+      let items = [
+        "a",
+        "b",
+      ]; /*dichiarazione di un array con dentro 2 elementi(a,b)*/
+
+      function inputToArray() {
+        /*dichiarazione di una funzione*/
+        let str = ""; /*dichiarazione di una variabile vuota*/
+        let boxvalue = ""; /*dichiarazione di una variabile vuota*/
+        boxvalue =
+          document.getElementById(
+            "box"
+          ).value; /*la variabile boxvalue è uguale al valore dentro l'elemento input*/
+        items.push(
+          boxvalue
+        ); /*aggiungi l'elemento scritto in boxvalue dentro l'array items*/
+        console.log(items);
+        str = str + "," + boxvalue; /*aggiungi una virgola alla variabile str*/
+        document.getElementById("out").innerHTML =
+          items; /*inserisci nell'elemento con id "out" item*/
+        return false; /*la funzione restituirà false*/
+      }
+
+      function printArray() {
+        /*dichiarazione di una funzione*/
+        let str = ""; /*dichiarazione di una variabile vuota*/
+        for (let i = 0; i < items.length; i++) {
+          /*inizio di un ciclo che girerà per la lunghezza di items*/
+          str =
+            str +
+            " " +
+            items[i]
+              .value; /*str è uguale a str con uno spazio e l'oggetto iesimo*/
+        }
+        return str; /*la funzione restituirà str*/
+      }
+    </script>
+    <!--chiusura dello script-->
+
+    <form onsubmit="return inputToArray()">
+      <!--quando verrà avviato il submit verrà avviata la funzione inputToArray-->
+      <p>Please insert the items</p>
+      <!--crea paragrafo con dentro scritto "Pleas insert the item"-->
+      <input
+        type="text"
+        id="box"
+      /><!--crea un input di tipo testo con id box-->
+      <input
+        type="submit"
+        value="Submit"
+      /><!--cre aun input di tipo submit con valore Submit-->
+    </form>
+    <!--chiusura del form-->
+
+    <p id="out"></p>
+    <!--paragrafo dove verrà scritto str-->
+  </body>
+  <!--chiusura del body-->
+</html>
+<!--chiusura dell'html-->
