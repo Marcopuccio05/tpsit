@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <style>
+  button{
+    height:80px;
+    width:95px;
+    background-color:pink;
+  }
+  </style>
+</head>
+
+<body>
+  <button onclick="stampaNumeri()">Calcola i fattori</button>
+  <div id="out"> </div>
+  
+  
+  
+  
+  <script>
+
+    function fattorizzatore(n){
+      let stringaFattori="";
+      let fineCiclo = n/2;
+      for (let fattore = 1; fattore <= fineCiclo; fattore++){
+        if (n % fattore == 0){
+          stringaFattori = stringaFattori+ fattore+" ";
+        }
+      }
+      return  stringaFattori;
+    }  
+
+    function stampaNumeri() {  
+      for (let i = 1; i <= 100; i++){
+        document.getElementById("out").innerHTML+="<p>Fattori del numero "+i+": "+fattorizzatore(i)+"</p>";
+      }
+    }
+
+      
+  </script>
+<p>Il numero, minore di 1000, che ha più fattorizzatori è 840.</p>
+  
+</body>
+
+</html>
